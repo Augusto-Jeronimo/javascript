@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio - Nacionalidade</title>
+    <style>
+        body {
+            font: normal 18px Arial, sans-serif;
+            background-image: none;
+        }
+        input#nome {
+            padding: 3px;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+        div {
+            margin-top: 20px;
+            padding: 1px;
+            border: 0px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nacionalidade</h1>
+
+    Digite o país em que vive:
+    <input type="text" id="país">
+    <input type="button" value="Enviar" id="submit" onclick="executar()">
+    <div id="resul"></div>
+
+    <script>
+        function executar(){
+            var p = window.document.getElementById('país')
+            var d = window.document.getElementById('resul')
+            var fundo = window.document.getElementsByTagName('body')[0]
+
+            var nacio
+            if (p.value == 'Brasil') {
+                d.style.backgroundImage = 'linear-gradient(to right, green, rgb(238, 255, 0), blue)'
+                nacio = 'brasileiro'
+                
+            } else {
+                nacio = 'estrangeiro'
+                d.style.backgroundImage = 'none'
+            }
+
+            d.innerHTML = `<p>se você nasceu em ${p.value} você é <strong>${nacio}</strong></p>`
+        }
+    </script>
+</body>
+</html>
