@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prévia de imagem</title>
+    <style>
+        body {
+            background-color: #2b2035;
+        }
+
+        main {
+            background-color: #fff;
+            max-width: 400px;
+            margin: auto;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        div {
+            text-align: center;
+        }
+
+        button {
+            width: 30%;
+        }
+
+        img#photo {
+            width: 200px;
+            border: 2px dashed #7c7c7c;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
+        img#photo:hover, img#photo:focus {
+            border-color: blue;
+            outline: none;
+            box-shadow: 0 0 10px rgba(0, 0, 255, 0.4);
+            transition: 0.2s;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div>
+            <label for="upload_photo">
+                <img id="photo" tabindex="0" src="imagens/sem-imagem.png" alt="Selecione uma imagem">
+            </label>
+            <input type="file" id="upload_photo" accept="image/*" hidden>
+
+            <p id="sel"></p>
+        </div>
+    </main>
+
+    <script>
+        const inputFile = document.querySelector('#upload_photo')
+        const imgPhoto = document.querySelector('#photo')
+        
+        const defaultSrc = 'imagens/sem-imagem.png'
+        
+        inputFile.addEventListener('change', () => {
+            if (inputFile.files[0]) {
+
+                let reader = new FileReader()
+
+                reader.onload = () => {
+                    imgPhoto.src = reader.result
+                }
+
+                reader.readAsDataURL(inputFile.files[0])
+
+            } else {
+                imgPhoto.src = defaultSrc
+            }
+        })
+    </script>
+</body>
+</html>
