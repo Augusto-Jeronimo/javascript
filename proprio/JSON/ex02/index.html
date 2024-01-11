@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="carregar()">
+    <div class="container"></div>
+
+    <script>
+        function carregar() {
+            const content = document.querySelector('div.container');
+            
+            fetch('jogos.json').then(response => response.json()).then(jogos => {
+
+                jogos.forEach(j => {
+                    const card = document.createElement('div');
+                    card.setAttribute('class', 'card');
+
+                    const imagem = document.createElement('img');
+                    imagem.setAttribute('src', j.imagem);
+
+                    const nome = document.createElement('p');
+                    nome.innerText = j.nome;
+
+                    card.appendChild(imagem);
+                    card.appendChild(nome);
+
+                    content.appendChild(card);
+
+                });
+
+            })
+
+        }
+    </script>
+</body>
+</html>

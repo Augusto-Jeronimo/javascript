@@ -1,0 +1,10 @@
+{
+    "nome": "Augusto Jerônimo",
+    "idade": 19,
+    "trabalhando": true,
+    "detalhes_trabalho": {
+        "trabalho": "Tutor de PEOO",
+        "local": "IFRN - NC"
+    },
+    "hobbies": ["programar", "correr", "Jogar"]
+}

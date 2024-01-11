@@ -1,0 +1,14 @@
+[
+    {
+        "nome": "Minecraft",
+        "imagem": "img/minecraft.jpg"
+    },
+    {
+        "nome": "Terraria",
+        "imagem": "img/terraria.jpg"
+    },
+    {
+        "nome": "Magic The Gathering Arena",
+        "imagem": "img/magic.jpg"
+    }
+]
